@@ -77,9 +77,8 @@ MODEL_PATH = "best_cnn_model_image.keras"
 
 try:
     model = tf.keras.models.load_model(MODEL_PATH)
-    st.success("✅ Model Loaded Successfully")
 except Exception as e:
-    st.error(f"❌ Model Loading Error: {str(e)}")
+    st.error(str(e))
     st.stop()
 
 # ==========================
