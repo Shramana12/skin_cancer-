@@ -73,9 +73,14 @@ st.write("")
 # ==========================
 # MODEL LOAD
 # ==========================
-MODEL_PATH = r"C:\Users\Prarthana\Desktop\Skin_Cancer\best_cnn_model_image.keras"
+MODEL_PATH = "best_cnn_model_image.keras"
 
-model = tf.keras.models.load_model(MODEL_PATH)
+try:
+    model = tf.keras.models.load_model(MODEL_PATH)
+    st.success("✅ Model Loaded Successfully")
+except Exception as e:
+    st.error(f"❌ Model Loading Error: {str(e)}")
+    st.stop()
 
 # ==========================
 # CLASS NAMES
